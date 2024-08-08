@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "BetterISMIS",
+  "version": "1.0",
+  "description": "Better ISMIS",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "favicon.png",
+      "48": "favicon.png",
+      "128": "favicon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ismis.usc.edu.ph/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
